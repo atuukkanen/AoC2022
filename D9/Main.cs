@@ -23,7 +23,7 @@ namespace D9
             }
 
             var handler = new CommandHandler(head, tails);
-            foreach (var line in lines)
+            foreach (var line in lines.Where(x => x != ""))
             {
                 var command = MoveCommand.FromCommandLine(line);
                 handler.Execute(command);
